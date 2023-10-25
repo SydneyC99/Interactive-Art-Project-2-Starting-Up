@@ -16,6 +16,10 @@ function draw() {
 
     goButton = createButton("Get Up");
     goButton.position(12, 12);
+    goButton.mousePressed(hallway);
 
+}
 
+function hallway() {
+    //move to the next screen
 }
