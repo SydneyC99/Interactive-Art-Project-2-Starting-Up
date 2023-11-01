@@ -3,14 +3,14 @@ let canvasHeight;
 let canvasWidth;
 function setup() {
 
-    canvasHeight = 200;
-    canvasWidth = 200;
+    // canvasHeight = 200;
+    // canvasWidth = 200;
     
-    let canvas = new Canvas(canvasWidth, canvasHeight, 'pixelated x2');
-    background('red');
+    // let canvas = new Canvas(canvasWidth, canvasHeight, 'pixelated x2');
+    // background('black');
 
     
-    sprite = new Sprite();
+    // sprite = new Sprite();
     
 
 
@@ -18,6 +18,8 @@ function setup() {
 }
 
 function draw() {
+    clear();
+    background('black');
 
 
 }
