@@ -5,7 +5,7 @@ let canvasWidth;
 
 function preload() {
     charImg = loadImage('Assets/Character Sprite.png');
-    tileImg = loadImage('Assets/TileSheet64x64.png');
+    tileImg = loadImage('Assets/TileSheet64x48.png');
 }
 
 function setup() {
@@ -16,7 +16,7 @@ function setup() {
     new Canvas(canvasWidth, canvasHeight, 'pixelated x2');
     allSprites.pixelPerfect = true;
     allSprites.rotationLock = true;
-    allSprites.tileSize = 16;
+    allSprites.tileSize = 8;
     
     // char = new Sprite(1.5,1.5, 16,16);
     // char.spriteSheet = charImg;
@@ -28,6 +28,18 @@ function setup() {
     pathCornerTL.spriteSheet = tileImg;
     pathCornerTL.addAni({w:1, h:1, row: 0, col: 0});
     pathCornerTL.tile = 'c';
+
+    let pathCornerTR = new Group();
+    pathCornerTR.collider = 'none';
+    pathCornerTR.spriteSheet = tileImg;
+    pathCornerTR.addAni({w:1, h:1, row: 0, col: 3});
+    pathCornerTR.tile = 'v';
+
+    let pathCornerBL = new Group();
+    pathCornerBL.collider = 'none';
+    pathCornerBL.spriteSheet = tileImg;
+    pathCornerBL.addAni({w:1, h:1, row: 2, col: 0});
+    pathCornerBL.tile = 'b';
     
     let pathTop = new Group();
     pathTop.collider = 'none';
@@ -43,8 +55,9 @@ function setup() {
 
     new Tiles(
         [
-            'ctttttttttttttc',
-            'l.............l'
+            'ctttttttttttttv',
+            'l.............l',
+            'b.............l'
         ],
         0.5, 0.5, 1, 1
     );
