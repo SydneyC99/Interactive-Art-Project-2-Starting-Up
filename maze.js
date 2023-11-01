@@ -39,7 +39,13 @@ function setup() {
     pathCornerBL.collider = 'none';
     pathCornerBL.spriteSheet = tileImg;
     pathCornerBL.addAni({w:1, h:1, row: 2, col: 0});
-    pathCornerBL.tile = 'b';
+    pathCornerBL.tile = 'm';
+
+    let pathCornerBR = new Group();
+    pathCornerBR.collider = 'none';
+    pathCornerBR.spriteSheet = tileImg;
+    pathCornerBR.addAni({w:1, h:1, row: 2, col: 3});
+    pathCornerBR.tile = 'n';
     
     let pathTop = new Group();
     pathTop.collider = 'none';
@@ -53,11 +59,17 @@ function setup() {
     pathLeft.addAni({w:1, h:1, row: 1, col: 0});
     pathLeft.tile = 'l';
 
+    let pathRight = new Group();
+    pathRight.collider = 'none';
+    pathRight.spriteSheet = tileImg;
+    pathRight.addAni({w:1, h:1, row: 1, col:3});
+    pathRight.tile = 'r';
+
     new Tiles(
         [
             'ctttttttttttttv',
-            'l.............l',
-            'b.............l'
+            'l.............r',
+            'm.............n'
         ],
         0.5, 0.5, 1, 1
     );
