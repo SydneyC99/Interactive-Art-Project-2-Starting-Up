@@ -65,6 +65,12 @@ function setup() {
     pathRight.addAni({w:1, h:1, row: 1, col:3});
     pathRight.tile = 'r';
 
+    let pathBottom = new Group();
+    pathBottom.collider = 'none';
+    pathBottom.spriteSheet = tileImg;
+    pathBottom.addAni({w:1, h:1, row: 0, col:2});
+    pathBottom.tile = 'b';
+
     let panicTile = new Group();
     panicTile.collider = 'none';
     panicTile.spriteSheet = tileImg;
@@ -74,9 +80,10 @@ function setup() {
 
     new Tiles(
         [
-            'cttttttttttttttttttttttttttttv',
-            'l...........................dr',
-            'm............................n'
+            'ctttttttttttttvctttttttttttttv',
+            'l.............rl............dr',
+            'm...........................bn',
+            'l............................r',
         ],
         0.5, 0.5, 1, 1
     );
@@ -85,7 +92,7 @@ function setup() {
 
 function draw() {
     clear();
-    background('black');
-
+    // background(13,12,12);
+    background('blue');
 
 }
