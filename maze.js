@@ -5,7 +5,7 @@ let canvasWidth;
 
 function preload() {
     charImg = loadImage('Assets/Character Sprite.png');
-    tileImg = loadImage('Assets/TileSheet64x48.png');
+    tileImg = loadImage('Assets/TileSheet32x32.png');
 }
 
 function setup() {
@@ -65,11 +65,18 @@ function setup() {
     pathRight.addAni({w:1, h:1, row: 1, col:3});
     pathRight.tile = 'r';
 
+    let panicTile = new Group();
+    panicTile.collider = 'none';
+    panicTile.spriteSheet = tileImg;
+    panicTile.addAni({w:1, h:1, row: 3, col:1});
+    panicTile.tile = 'd';
+
+
     new Tiles(
         [
-            'ctttttttttttttv',
-            'l.............r',
-            'm.............n'
+            'cttttttttttttttttttttttttttttv',
+            'l...........................dr',
+            'm............................n'
         ],
         0.5, 0.5, 1, 1
     );
