@@ -138,7 +138,7 @@ function setup() {
             'l.jbh.r.r.rbbbbbbbbbbbbh.l.jbn',
             'l...l.r.r.r.......l....l.l..pr',
             'l...l.r.r.r.gbbbh.l....k.l.ttv',
-            'l...l.r.r.r.r...l.l..r.....pr',
+            'l...l.r.r.r.r...l.l..r......pr',
             'l...r.....r.rph.l.l..jbbbbbbbn',
             'l...jbbbbbk.jtk.l.l..........r',
             'l...............lpl.........bn',
@@ -161,7 +161,7 @@ function setup() {
             'l............................r',
             'l............................r',
             'mbbbbbbbbbbbbbbbbbbbbbbbbbbbbn',
-        ],   123456789123456789123456789123
+        ],   
         0.5, 0.5, 1, 1
     );
 
