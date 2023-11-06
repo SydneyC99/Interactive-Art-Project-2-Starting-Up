@@ -85,56 +85,70 @@ function setup() {
     innerCornerTL.collider = 'none';
     innerCornerTL.spriteSheet = tileImg;
     innerCornerTL.addAni({w:1, h:1, row: 1, col:1});
-    innerCornerTL.tile = 'a';
+    innerCornerTL.tile = 'g';
 
     // inner corner oriented like top right tile
     let innerCornerTR = new Group();
     innerCornerTR.collider = 'none';
     innerCornerTR.spriteSheet = tileImg;
     innerCornerTR.addAni({w:1, h:1, row: 1, col:2});
-    innerCornerTR.tile = 's';
+    innerCornerTR.tile = 'h';
 
     // inner corner oriented like bottom left tile
     let innerCornerBL = new Group();
     innerCornerBL.collider = 'none';
     innerCornerBL.spriteSheet = tileImg;
     innerCornerBL.addAni({w:1, h:1, row: 2, col:1});
-    innerCornerBL.tile = 'd';
+    innerCornerBL.tile = 'j';
 
     // inner corner oriented like bottom right tile
     let innerCornerBR = new Group();
     innerCornerBR.collider = 'none';
     innerCornerBR.spriteSheet = tileImg;
     innerCornerBR.addAni({w:1, h:1, row: 2, col:2});
-    innerCornerBR.tile = 'f';
+    innerCornerBR.tile = 'k';
 
+    //fail condition tile, adds to Breakdown Bar
     let panicTile = new Group();
     panicTile.collider = 'none';
     panicTile.spriteSheet = tileImg;
-    panicTile.addAni({w:1, h:1, row: 3, col:1});
+    panicTile.addAni({w:1, h:1, row: 3, col:0});
     panicTile.tile = 'p';
+
+    //win condition tile, moves player to the next screen
+    let exitTile = new Group();
+    exitTile.collider = 'none';
+    exitTile.spriteSheet = tileImg;
+    exitTile.addAni({w:1, h:1, row: 3, col: 1});
+    exitTile.tile = 'e';
+    
+    let startTile = new Group();
+    startTile.collider = 'none';
+    startTile.spriteSheet = tileImg;
+    startTile.addAni({w:1, h:1, row: 3, col: 2});
+    startTile.tile = 's';
 
 
     new Tiles(
         [
-            'ctttvtttttttttttttttttttcttttv',
-            'l...dv..................l...pr',
-            'mbs........................abn',
-            'l.db.......................f.r',
+            'ctttvtttvtttttttttttcttttttttv',
+            'ls..rp..r...........l........r',
+            'mbh.jbh.r.gbbbbbbbh.l.gbbbbh.r',
+            'lpl...r.r.rp...............rpr',
+            'l.jbh.r.r.rbbbbbbbbbbbbh.l.jbn',
+            'l...l.r.r.r.......l..........r',
+            'l...l.r.r.r.......l..........r',
+            'l...l.r.r.r.......l.........gn',
+            'l...r.....r.......l.........kr',
+            'l...jbbbbbk.......l..........r',
+            'l.................l..........r',
+            'l......g..........k..........e',
             'l............................r',
             'l............................r',
             'l............................r',
             'l............................r',
             'l............................r',
-            'l............................r',
-            'l............................r',
-            'l............................r',
-            'l............................r',
-            'l............................r',
-            'l............................r',
-            'l............................r',
-            'l............................r',
-            'l............................r',
+            'l......j..h.................r',
             'l............................r',
             'l............................r',
             'l............................r',
