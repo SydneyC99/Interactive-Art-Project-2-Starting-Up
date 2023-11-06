@@ -21,5 +21,5 @@ function draw() {
 }
 
 function hallway() {
-    //move to the next screen
+    location.href = "maze.html"
 }
