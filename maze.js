@@ -23,24 +23,29 @@ function setup() {
     // char.addAnis({
     //     front: {row: 0, col: 0}
     // })
+
+    //top left corner- outer wall
     let pathCornerTL = new Group();
     pathCornerTL.collider = 'none';
     pathCornerTL.spriteSheet = tileImg;
     pathCornerTL.addAni({w:1, h:1, row: 0, col: 0});
     pathCornerTL.tile = 'c';
 
+    //top right corner- outer wall
     let pathCornerTR = new Group();
     pathCornerTR.collider = 'none';
     pathCornerTR.spriteSheet = tileImg;
     pathCornerTR.addAni({w:1, h:1, row: 0, col: 3});
     pathCornerTR.tile = 'v';
 
+    //bottom left corner- outer wall
     let pathCornerBL = new Group();
     pathCornerBL.collider = 'none';
     pathCornerBL.spriteSheet = tileImg;
     pathCornerBL.addAni({w:1, h:1, row: 2, col: 0});
     pathCornerBL.tile = 'm';
 
+    //bottom right corner -outer wall
     let pathCornerBR = new Group();
     pathCornerBR.collider = 'none';
     pathCornerBR.spriteSheet = tileImg;
@@ -71,6 +76,11 @@ function setup() {
     pathBottom.addAni({w:1, h:1, row: 0, col:2});
     pathBottom.tile = 'b';
 
+    // innerCornerTL
+    // innerCornerTR
+    // innerCornerBL
+    // innerCornerBR
+
     let panicTile = new Group();
     panicTile.collider = 'none';
     panicTile.spriteSheet = tileImg;
@@ -80,10 +90,36 @@ function setup() {
 
     new Tiles(
         [
-            'ctttttttttttttvctttttttttttttv',
-            'l.............rl............dr',
-            'm...........................bn',
+            'ctttttttttttttttttttttttvttttv',
+            'l.......................r...dr',
+            'mbv........................cbn',
             'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'l............................r',
+            'mbbbbbbbbbbbbbbbbbbbbbbbbbbbbn',
         ],
         0.5, 0.5, 1, 1
     );
