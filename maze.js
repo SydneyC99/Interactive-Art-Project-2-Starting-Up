@@ -85,16 +85,28 @@ function setup() {
     innerCornerTL.collider = 'none';
     innerCornerTL.spriteSheet = tileImg;
     innerCornerTL.addAni({w:1, h:1, row: 1, col:1});
-    innerCornerTL.tile = 'q';
+    innerCornerTL.tile = 'a';
 
     // inner corner oriented like top right tile
     let innerCornerTR = new Group();
     innerCornerTR.collider = 'none';
     innerCornerTR.spriteSheet = tileImg;
     innerCornerTR.addAni({w:1, h:1, row: 1, col:2});
-    innerCornerTR.tile = 'w';
-    // innerCornerBL
-    // innerCornerBR
+    innerCornerTR.tile = 's';
+
+    // inner corner oriented like bottom left tile
+    let innerCornerBL = new Group();
+    innerCornerBL.collider = 'none';
+    innerCornerBL.spriteSheet = tileImg;
+    innerCornerBL.addAni({w:1, h:1, row: 2, col:1});
+    innerCornerBL.tile = 'd';
+
+    // inner corner oriented like bottom right tile
+    let innerCornerBR = new Group();
+    innerCornerBR.collider = 'none';
+    innerCornerBR.spriteSheet = tileImg;
+    innerCornerBR.addAni({w:1, h:1, row: 2, col:2});
+    innerCornerBR.tile = 'f';
 
     let panicTile = new Group();
     panicTile.collider = 'none';
@@ -105,10 +117,10 @@ function setup() {
 
     new Tiles(
         [
-            'ctttttttttttttttttttttttvttttv',
-            'l.......................r...pr',
-            'mbw........................qbn',
-            'l............................r',
+            'ctttvtttttttttttttttttttcttttv',
+            'l...dv..................l...pr',
+            'mbs........................abn',
+            'l.db.......................f.r',
             'l............................r',
             'l............................r',
             'l............................r',
