@@ -52,32 +52,47 @@ function setup() {
     pathCornerBR.addAni({w:1, h:1, row: 2, col: 3});
     pathCornerBR.tile = 'n';
     
+    //upward oriented wall
     let pathTop = new Group();
     pathTop.collider = 'none';
     pathTop.spriteSheet = tileImg;
     pathTop.addAni({w:1, h:1, row: 0, col: 1});
     pathTop.tile = 't';
 
+    //left oriented wall
     let pathLeft = new Group();
     pathLeft.collider = 'none';
     pathLeft.spriteSheet = tileImg;
     pathLeft.addAni({w:1, h:1, row: 1, col: 0});
     pathLeft.tile = 'l';
 
+    //right oriented wall
     let pathRight = new Group();
     pathRight.collider = 'none';
     pathRight.spriteSheet = tileImg;
     pathRight.addAni({w:1, h:1, row: 1, col:3});
     pathRight.tile = 'r';
 
+    //downward oriented wall
     let pathBottom = new Group();
     pathBottom.collider = 'none';
     pathBottom.spriteSheet = tileImg;
     pathBottom.addAni({w:1, h:1, row: 0, col:2});
     pathBottom.tile = 'b';
 
-    // innerCornerTL
-    // innerCornerTR
+    //inner corner oriented like top left tile
+    let innerCornerTL = new Group();
+    innerCornerTL.collider = 'none';
+    innerCornerTL.spriteSheet = tileImg;
+    innerCornerTL.addAni({w:1, h:1, row: 1, col:1});
+    innerCornerTL.tile = 'q';
+
+    // inner corner oriented like top right tile
+    let innerCornerTR = new Group();
+    innerCornerTR.collider = 'none';
+    innerCornerTR.spriteSheet = tileImg;
+    innerCornerTR.addAni({w:1, h:1, row: 1, col:2});
+    innerCornerTR.tile = 'w';
     // innerCornerBL
     // innerCornerBR
 
@@ -85,14 +100,14 @@ function setup() {
     panicTile.collider = 'none';
     panicTile.spriteSheet = tileImg;
     panicTile.addAni({w:1, h:1, row: 3, col:1});
-    panicTile.tile = 'd';
+    panicTile.tile = 'p';
 
 
     new Tiles(
         [
             'ctttttttttttttttttttttttvttttv',
-            'l.......................r...dr',
-            'mbv........................cbn',
+            'l.......................r...pr',
+            'mbw........................qbn',
             'l............................r',
             'l............................r',
             'l............................r',
