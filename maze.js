@@ -5,24 +5,25 @@ let canvasWidth;
 
 function preload() {
     charImg = loadImage('Assets/Character Sprite.png');
-    tileImg = loadImage('Assets/TileSheet32x32.png');
+    tileImg = loadImage('Assets/TileSheet64x64.png');
 }
 
 function setup() {
 
-    canvasHeight = 184;
-    canvasWidth = 232;
+    canvasHeight = 368;
+    canvasWidth = 464;
     
-    new Canvas(canvasWidth, canvasHeight, 'pixelated x2');
+    new Canvas(canvasWidth, canvasHeight, 'pixelated x1.5');
     allSprites.pixelPerfect = true;
     allSprites.rotationLock = true;
-    allSprites.tileSize = 8;
+    allSprites.tileSize = 16;
     
-    // char = new Sprite(1.5,1.5, 16,16);
-    // char.spriteSheet = charImg;
-    // char.addAnis({
-    //     front: {row: 0, col: 0}
-    // })
+    char = new Sprite(10.5,10.5, 16,16);
+    char.spriteSheet = charImg;
+    char.addAnis({
+        front: {row: 0, col: 0}
+    })
+    
 
     //top left corner- outer wall
     let pathCornerTL = new Group();
@@ -132,9 +133,9 @@ function setup() {
     new Tiles(
         [
             'ctttvtttvtttttttttttctttttttv',
-            's...rp..r...........l.......r',
+            'lp..rp..r...........l.......r',
             'mbh.jbh.r.gbbbbbbbh.l.gbbbh.r',
-            'lpl...r.r.rp..............rpr',
+            's.l...r.r.rp..............rpr',
             'l.jbh.r.r.rbbbbbbbbbbbh.h.rbn',
             'l...l.r.r.r.......l...l.lprpr',
             'mbh.l.r.r.r.gbbbh.l.g.k.jbk.r',
@@ -148,7 +149,7 @@ function setup() {
             'l.rp..r.rp..l.l.jtk.jtk.jbh.r',
             'l.jth.r.jtttk.l.............r',
             'l...l.r.......jttbbbbbh.gbk.r',
-            'l.g.l.rttttth...............r',
+            'l.g.l.rbbttth...............r',
             'l.r.l.rpl...jbbbbbbbbbbbbbh.r',
             'l.rpl.l.lpl...........pl.pl.r',
             'l.jtk.l.jtk.bbbbbtvttttk.tk.r',
