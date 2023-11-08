@@ -6,6 +6,7 @@ let canvasWidth;
 function preload() {
     charImg = loadImage('Assets/Character Sprite.png');
     tileImg = loadImage('Assets/TileSheet64x64.png');
+    
 }
 
 function setup() {
@@ -18,11 +19,15 @@ function setup() {
     allSprites.rotationLock = true;
     allSprites.tileSize = 16;
     
-    char = new Sprite(10.5,10.5, 16,16);
+    char = new Sprite(0.5,3.5, 16,16);
     char.spriteSheet = charImg;
     char.addAnis({
-        front: {row: 0, col: 0}
-    })
+        left: {row: 0, col: 0},
+        right: {row: 0, col: 1},
+        down: {row: 0, col: 2},
+        up: {row: 0, col: 3}
+    });
+    char.changeAni('right');
     
 
     //top left corner- outer wall
@@ -135,7 +140,7 @@ function setup() {
             'ctttvtttvtttttttttttctttttttv',
             'lp..rp..r...........l.......r',
             'mbh.jbh.r.gbbbbbbbh.l.gbbbh.r',
-            's.l...r.r.rp..............rpr',
+            '..l...r.r.rp..............rpr',
             'l.jbh.r.r.rbbbbbbbbbbbh.h.rbn',
             'l...l.r.r.r.......l...l.lprpr',
             'mbh.l.r.r.r.gbbbh.l.g.k.jbk.r',
@@ -165,5 +170,5 @@ function draw() {
     clear();
     // background(13,12,12);
     background('blue');
-
+    
 }
