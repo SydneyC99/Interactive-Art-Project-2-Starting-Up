@@ -10,7 +10,7 @@ function preload() {
 
 function setup() {
 
-    canvasHeight = 208;
+    canvasHeight = 184;
     canvasWidth = 232;
     
     new Canvas(canvasWidth, canvasHeight, 'pixelated x2');
@@ -138,22 +138,22 @@ function setup() {
             'l.jbh.r.r.rbbbbbbbbbbbh.h.jbn',
             'l...l.r.r.r.......l...l.l..pr',
             'mbh.l.r.r.r.gbbbh.l.g.k.j.gtv',
-            'l.l.l.r.r.r.r...l.l.r......pr',
+            'lpl.l.r.r.r.r...l.l.r......pr',
             'l.l.r.....r.rph.l.l.jbbbbbbbn',
-            'l.l.jbbbbbk.jtk.l.l.........r',
-            'l.j.............lpl.gttttth.r',
-            'l......gbbbbbbbbttk.r.....r.e',
-            'l......r............r.....jbv',
-            'l......r............r.......r',
-            'l......r............j.....h.r',
-            'l......r..................l.r',
-            'l......r..................l.r',
-            'l......j...h..............l.r',
-            'l..........jbbbbbbbbbbbbbbk.r',
-            'l...........................r',
-            'l...........................r',
-            'l...........................r',
-            'mbbbbbbbbbbbbbbbbbbbbbbbbbbbn',
+            'l.l.jbbbbbk.jtk.l.l.....l...r',
+            'l.l.............lpl.gtttk.h.r',
+            'l.jbh.gbbbbbbbbbttl.r.....r.e',
+            'l...........l.....l.r.gbh.jbv',
+            'l.gttth.gbb.l.r.r.l.rprpr...r',
+            'l.r...r.rp..l.l.jtk.jtk.jbh.r',
+            'l.jth.r.jtttk.l.............r',
+            'l.....r.......jttbbbbbh.gbk.r',
+            'l.....jttttth...............r',
+            'l...........jbbbbbbbbbbbbbh.r',
+            'l.....................pl.pl.r',
+            'l............bbbbtvttttk.tk.r',
+            'l................prp........r',
+            'mbbbbbbbbbbbbbbbbbnbbbbbbbbbn',
         ],   
         0.5, 0.5, 1, 1
     );
