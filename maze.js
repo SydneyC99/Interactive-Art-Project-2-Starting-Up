@@ -10,8 +10,8 @@ function preload() {
 
 function setup() {
 
-    canvasHeight = 248;
-    canvasWidth = 256;
+    canvasHeight = 208;
+    canvasWidth = 232;
     
     new Canvas(canvasWidth, canvasHeight, 'pixelated x2');
     allSprites.pixelPerfect = true;
@@ -131,33 +131,25 @@ function setup() {
 
     new Tiles(
         [
-            '...ctttvtttvtttttttttttctttttttv',
-            '...ls..rp..r...........l.......r',
-            '...mbh.jbh.r.gbbbbbbbh.l.gbbbh.r',
-            '...lpl...r.r.rp..............rpr',
-            '...l.jbh.r.r.rbbbbbbbbbbbh.l.jbn',
-            '...l...l.r.r.r.......l...l.l..pr',
-            '...mbh.l.r.r.r.gbbbh.l.r.k.l.ttv',
+            'ctttvtttvtttttttttttctttttttv',
+            's...rp..r...........l.......r',
+            'mbh.jbh.r.gbbbbbbbh.l.gbbbh.r',
+            'lpl...r.r.rp..............rpr',
+            'l.jbh.r.r.rbbbbbbbbbbbh.h.jbn',
+            'l...l.r.r.r.......l...l.l..pr',
+            'mbh.l.r.r.r.gbbbh.l.g.k.j.gtv',
             'l.l.l.r.r.r.r...l.l.r......pr',
             'l.l.r.....r.rph.l.l.jbbbbbbbn',
             'l.l.jbbbbbk.jtk.l.l.........r',
-            'l...............lpl.gttttth.r',
+            'l.j.............lpl.gttttth.r',
             'l......gbbbbbbbbttk.r.....r.e',
-            'l......r..................jbv',
-            'l......r....................r',
-            'l......r....................r',
-            'l......r....................r',
-            'l......r....................r',
-            'l......j...h................r',
-            'l...........................r',
-            'l...........................r',
-            'l...........................r',
-            'l...........................r',
-            'l...........................r',
-            'l...........................r',
-            'l...........................r',
-            'l...........................r',
-            'l...........................r',
+            'l......r............r.....jbv',
+            'l......r............r.......r',
+            'l......r............j.....h.r',
+            'l......r..................l.r',
+            'l......r..................l.r',
+            'l......j...h..............l.r',
+            'l..........jbbbbbbbbbbbbbbk.r',
             'l...........................r',
             'l...........................r',
             'l...........................r',
