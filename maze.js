@@ -169,19 +169,19 @@ function draw() {
     clear();
 
     //Let's make this guy move!
-    if (kb.pressed('left') && noWall(char.x-1,char.y)
+    if (kb.pressed('left') //&& noWall(char.x-1,char.y)
        )  {
         char.changeAni('left');
         char.x --;
-    } else if (kb.pressed('up') && noWall(char.x,char.y-1)
+    } else if (kb.pressed('up') //&& noWall(char.x,char.y-1)
       ) {
         char.changeAni('up');
         char.y --;
-    } else if (kb.pressed('down') && noWall(char.x,char.y+1)
+    } else if (kb.pressed('down') //&& noWall(char.x,char.y+1)
       ){
         char.changeAni('down');
         char.y ++;
-    } else if (kb.pressed('right') && noWall(char.x+1,char.y)
+    } else if (kb.pressed('right') //&& noWall(char.x+1,char.y)
       ){
         char.changeAni('right');
         char.x ++;
@@ -191,14 +191,14 @@ function draw() {
     
 }
 
-function noWall(x,y){
-    // rows = a columns = z
-    let a = floor(x);
-    let z = floor(y);
-    let tile = maze [a][z];
-    if (tile == '.'){
-        return true;
-    } else {
-        return false;
-    }
-}
+// function noWall(x,y){
+//     // rows = a columns = z
+//     let a = floor(x);
+//     let z = floor(y);
+//     let tile = maze [a][z];
+//     if (tile == '.'){
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
