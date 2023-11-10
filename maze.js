@@ -2,7 +2,7 @@ let char;
 let charImg, tileImg;
 let canvasHeight;
 let canvasWidth;
-let map = 
+let maze = 
         ['ctttvtttvtttttttttttctttttttv',
          'lp..rp..r...........l.......r',
          'mbh.jbh.r.gbbbbbbbh.l.gbbbh.r',
@@ -161,7 +161,7 @@ function setup() {
     startTile.tile = 's';
 
 
-    new Tiles(map, 0.5, 0.5, 1, 1);
+    new Tiles(maze, 0.5, 0.5, 1, 1);
 
 }
 
@@ -195,7 +195,7 @@ function noWall(x,y){
     // rows = a columns = z
     let a = floor(x);
     let z = floor(y);
-    let tile = map [a][z];
+    let tile = maze [a][z];
     if (tile == ' '){
         return true;
     } else {
