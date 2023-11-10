@@ -193,9 +193,9 @@ function draw() {
 
 function noWall(x,y){
     // rows = a columns = z
-    // let a = floor(x);
-    // let z = floor(y);
-    let tile = maze [x][y];
+    let a = floor(x);
+    let z = floor(y);
+    let tile = maze [a][z];
     if (tile == '.'){
         return true;
     } else {
