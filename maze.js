@@ -2,6 +2,31 @@ let char;
 let charImg, tileImg;
 let canvasHeight;
 let canvasWidth;
+let map = 
+        ['ctttvtttvtttttttttttctttttttv',
+         'lp..rp..r...........l.......r',
+         'mbh.jbh.r.gbbbbbbbh.l.gbbbh.r',
+         '..l...r.r.rp..............rpr',
+         'l.jbh.r.r.rbbbbbbbbbbbh.h.rbn',
+         'l...l.r.r.r.......l...l.lprpr',
+         'mbh.l.r.r.r.gbbbh.l.g.k.jbk.r',
+         'lpl.l.r.r.r.r...l.l.r.......r',
+         'l.l.r.....r.rph.l.l.jbbbbbbbn',
+         'l.l.jbbbbbk.jtk.l.l....pl...r',
+         'l.l.............lpl.gtttk.h.r',
+         'l.jbh.gbbbbbbbbbttl.r.....r.e',
+         'l...........l.....l.r.gbh.jbv',
+         'l.gttth.gbh.l.g.hpl.rprpr...r',
+         'l.rp..r.rp..l.l.jtk.jtk.jbh.r',
+         'l.jth.r.jtttk.l.............r',
+         'l...l.r.......jttbbbbbh.gbk.r',
+         'l.g.l.rbbttth...............r',
+         'l.r.l.rpl...jbbbbbbbbbbbbbh.r',
+         'l.rpl.l.lph...........pl.pl.r',
+         'l.jtk.k.jtk.gbbbbtvttttk.jk.r',
+         'l................prp........r',
+         'mbbbbbbbbbbbbbbbbbnbbbbbbbbbn',
+        ]   
 
 function preload() {
     charImg = loadImage('Assets/Character Sprite.png');
@@ -28,6 +53,7 @@ function setup() {
         up: {row: 0, col: 3}
     });
     char.changeAni('right');
+    
     
 
     //top left corner- outer wall
@@ -135,39 +161,27 @@ function setup() {
     startTile.tile = 's';
 
 
-    new Tiles(
-        [
-            'ctttvtttvtttttttttttctttttttv',
-            'lp..rp..r...........l.......r',
-            'mbh.jbh.r.gbbbbbbbh.l.gbbbh.r',
-            '..l...r.r.rp..............rpr',
-            'l.jbh.r.r.rbbbbbbbbbbbh.h.rbn',
-            'l...l.r.r.r.......l...l.lprpr',
-            'mbh.l.r.r.r.gbbbh.l.g.k.jbk.r',
-            'lpl.l.r.r.r.r...l.l.r.......r',
-            'l.l.r.....r.rph.l.l.jbbbbbbbn',
-            'l.l.jbbbbbk.jtk.l.l....pl...r',
-            'l.l.............lpl.gtttk.h.r',
-            'l.jbh.gbbbbbbbbbttl.r.....r.e',
-            'l...........l.....l.r.gbh.jbv',
-            'l.gttth.gbb.l.r.rpl.rprpr...r',
-            'l.rp..r.rp..l.l.jtk.jtk.jbh.r',
-            'l.jth.r.jtttk.l.............r',
-            'l...l.r.......jttbbbbbh.gbk.r',
-            'l.g.l.rbbttth...............r',
-            'l.r.l.rpl...jbbbbbbbbbbbbbh.r',
-            'l.rpl.l.lpl...........pl.pl.r',
-            'l.jtk.l.jtk.bbbbbtvttttk.tk.r',
-            'l................prp........r',
-            'mbbbbbbbbbbbbbbbbbnbbbbbbbbbn',
-        ],   
-        0.5, 0.5, 1, 1
-    );
+    new Tiles(map, 0.5, 0.5, 1, 1);
 
 }
 
 function draw() {
     clear();
+
+    //Let's make this guy move!
+    if (kb.pressed('left') && noWall(char.x-1,char.y))  {
+        char.changeAni('left');
+        char.x --;
+    } else if (kb.pressed('up') && noWall(char.x,char.y-1)) {
+        char.changeAni('up');
+        char.y --;
+    } else if (kb.pressed('down') && noWall(char.x,char.y+1)){
+        char.changeAni('down');
+        char.y ++;
+    } else if (kb.pressed('right') && noWall(char.x+1,char.y))  {
+        char.changeAni('right');
+        char.x ++;
+    }
     // background(13,12,12);
     background('blue');
     
