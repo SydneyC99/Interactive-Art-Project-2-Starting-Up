@@ -2,7 +2,7 @@ let char;
 let charImg, tileImg;
 let canvasHeight;
 let canvasWidth;
-let panicTile;
+let enemySquare;
 let maze = 
         ['ctttvtttvtttttttttttctttttttv',
          'lp..rp..r...........l.......r',
@@ -59,7 +59,13 @@ function setup() {
     });
     char.changeAni('right');
     
-    
+    // enemySquare = new Sprite (
+    //     1.5, 3.5, 16, 16
+    // );
+    // enemySquare.spriteSheet = tileImg;
+    // enemySquare.addAni({
+    //     enemy: {row: 3, col: 3}
+    // });
 
     //top left corner- outer wall
     let pathCornerTL = new Group();
@@ -146,7 +152,7 @@ function setup() {
     innerCornerBR.tile = 'k';
 
     //fail condition tile, adds to Breakdown Bar
-    panicTile = new Group();
+    let panicTile = new Group();
     panicTile.collider = 'none';
     panicTile.spriteSheet = tileImg;
     panicTile.addAni({w:1, h:1, row: 3, col:0});
@@ -167,6 +173,8 @@ function setup() {
 
 
     new Tiles(maze, 0.5, 0.5, 1, 1);
+
+    
 
 }
 
@@ -213,7 +221,7 @@ function noWall(x,y){
 function hitEnemy(){
     //if blob hits the enemy, damage blob
     //flash the damage sprite and take away a life
-    if (kb.pressed('left') && char.collides(panicTile)) {
+    if (kb.pressed('left') && char.collides(enemySquare)) {
         char.changeAni('leftPanic');
     } //else {
         //make elseif statements for other directions
