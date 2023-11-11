@@ -14,7 +14,7 @@ let maze =
          'l.l.r.....r.rph.l.l.jbbbbbbbn',
          'l.l.jbbbbbk.jtk.l.l....pl...r',
          'l.l.............lpl.gtttk.h.r',
-         'l.jbh.gbbbbbbbbbttl.r.....r.e',
+         'l.jbh.gbbbbbbbbbttl.r.....r..',
          'l...........l.....l.r.gbh.jbv',
          'l.gttth.gbh.l.g.hpl.rprpr...r',
          'l.rp..r.rp..l.l.jtk.jtk.jbh.r',
@@ -187,7 +187,7 @@ function draw() {
         char.x ++;
     }
     // background(13,12,12);
-    // background('blue');
+    background('blue');
     
 }
 
@@ -195,7 +195,7 @@ function noWall(x,y){
     // rows = a columns = z
     let a = floor(x);
     let z = floor(y);
-    let tile = maze [a][z];
+    let tile = maze [z][a];
     if (tile == '.'){
         console.log ('move');
         return true;
