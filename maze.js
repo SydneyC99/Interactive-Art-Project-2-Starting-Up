@@ -23,8 +23,13 @@ let maze =
          'l.jth.r.jtttk.l.....r.l.....r',
          'l...l.r.......jttbbbbbk.gbk.r',
          'l.g.l.rbbttth...............r',
+<<<<<<< HEAD
          'l.r.l.r.l...jbbbbbbbbbbbbbh.r',
          'l.r.l.l.l.h............l..l.r',
+=======
+         'l.r.l.rpl...jbbbbbbbbbbbbbh.r',
+         'l.r.l.l.lph...........pl.pl.r',
+>>>>>>> 293fe24 (First Square in Place)
          'l.jtk.k.jtk.gbbbbtvttttk.jk.r',
          'l.................r.........r',
          'mbbbbbbbbbbbbbbbbbnbbbbbbbbbn',
@@ -79,6 +84,7 @@ function setup() {
     enemySquare.stroke = 'pink';
     enemySquare[0].x = 3.5;
     enemySquare[0].y = 19.5;
+<<<<<<< HEAD
 
     enemySquare[1].x = 17.5;
     enemySquare[1].y = 21.5;
@@ -142,6 +148,12 @@ function setup() {
 
     enemySquare[21].x = 1.5;
     enemySquare[21].y = 1.5;
+=======
+
+    
+
+    // enemySquare[7].color = 'red';
+>>>>>>> 293fe24 (First Square in Place)
 
     //top left corner- outer wall
     let pathCornerTL = new Group();
