@@ -24,7 +24,7 @@ let maze =
          'l...l.r.......jttbbbbbh.gbk.r',
          'l.g.l.rbbttth...............r',
          'l.r.l.rpl...jbbbbbbbbbbbbbh.r',
-         'l.rpl.l.lph...........pl.pl.r',
+         'l.r.l.l.lph...........pl.pl.r',
          'l.jtk.k.jtk.gbbbbtvttttk.jk.r',
          'l................prp........r',
          'mbbbbbbbbbbbbbbbbbnbbbbbbbbbn',
@@ -76,11 +76,13 @@ function setup() {
         let enemy = new enemySquare.Sprite();
         enemy.x = enemySquare.length * 1;
     }
-    enemySquare[1].color = 'pink';
-    enemySquare[1].x = 3.5;
-    enemySquare[1].y = 21.5;
+    enemySquare.stroke = 'pink';
+    enemySquare[0].x = 3.5;
+    enemySquare[0].y = 19.5;
 
-    enemySquare[7].color = 'red';
+    
+
+    // enemySquare[7].color = 'red';
 
     //top left corner- outer wall
     let pathCornerTL = new Group();
@@ -215,7 +217,7 @@ function draw() {
         char.x ++;
     }
     // background(13,12,12);
-    // background('blue');
+    background('blue');
     
 }
 
