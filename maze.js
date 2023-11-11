@@ -70,11 +70,15 @@ function setup() {
     enemySquare.width = 1;
     enemySquare.height = 1;
     enemySquare.y = 23.5;
+    enemySquare.collider = 'static';
 
     while (enemySquare.length < 25){
         let enemy = new enemySquare.Sprite();
         enemy.x = enemySquare.length * 1;
     }
+    enemySquare[1].color = 'pink';
+    enemySquare[1].x = 3.5;
+    enemySquare[1].y = 21.5;
 
     enemySquare[7].color = 'red';
 
