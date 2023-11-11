@@ -51,7 +51,11 @@ function setup() {
         left: {row: 0, col: 0},
         right: {row: 0, col: 1},
         down: {row: 0, col: 2},
-        up: {row: 0, col: 3}
+        up: {row: 0, col: 3},
+        leftPanic: {row: 1, col: 0},
+        rightPanic: {row: 1, col: 1},
+        downPanic: {row: 1, col: 2},
+        upPanic: {row: 1, col: 3}
     });
     char.changeAni('right');
     
@@ -206,11 +210,16 @@ function noWall(x,y){
     }
 }
 
-// function hitEnemy(){
-//     //if blob hits the enemy, damage blob
-//     //flash the damage sprite and take away a life
-// }
+function hitEnemy(){
+    //if blob hits the enemy, damage blob
+    //flash the damage sprite and take away a life
+    if (kb.pressed('left') && char.collides(panicTile)) {
+        char.changeAni('leftPanic');
+    } //else {
+        //make elseif statements for other directions
+   // }
+}
 
 // function lifeCount(){
-
+//     //life count and display to be used in hitEnemy
 // }
