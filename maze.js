@@ -59,13 +59,10 @@ function setup() {
     });
     char.changeAni('right');
     
-    // enemySquare = new Sprite (
-    //     1.5, 3.5, 16, 16
-    // );
-    // enemySquare.spriteSheet = tileImg;
-    // enemySquare.addAni({
-    //     enemy: {row: 3, col: 3}
-    // });
+    enemySquare = new Sprite ();
+    enemySquare.width = 1;
+    enemySquare.height = 1;
+    enemySquare.color = 'black';
 
     //top left corner- outer wall
     let pathCornerTL = new Group();
