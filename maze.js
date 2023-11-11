@@ -2,6 +2,7 @@ let char;
 let charImg, tileImg;
 let canvasHeight;
 let canvasWidth;
+let panicTile;
 let maze = 
         ['ctttvtttvtttttttttttctttttttv',
          'lp..rp..r...........l.......r',
@@ -36,7 +37,7 @@ function preload() {
 
 function setup() {
 
-    canvasHeight = 368;
+    canvasHeight = 400;
     canvasWidth = 464;
     
     new Canvas(canvasWidth, canvasHeight, 'pixelated x1.5');
@@ -141,7 +142,7 @@ function setup() {
     innerCornerBR.tile = 'k';
 
     //fail condition tile, adds to Breakdown Bar
-    let panicTile = new Group();
+    panicTile = new Group();
     panicTile.collider = 'none';
     panicTile.spriteSheet = tileImg;
     panicTile.addAni({w:1, h:1, row: 3, col:0});
@@ -204,3 +205,12 @@ function noWall(x,y){
         return false;
     }
 }
+
+// function hitEnemy(){
+//     //if blob hits the enemy, damage blob
+//     //flash the damage sprite and take away a life
+// }
+
+// function lifeCount(){
+
+// }
