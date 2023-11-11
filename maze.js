@@ -19,7 +19,7 @@ let maze =
          'l.jbh.gbbbbbbbbbttl.r.....r..',
          'l...........l.....l.r.gbh.jbv',
          'l.gttth.gbh.l.g.hpl.r.rpr...r',
-         'l.rp..r.rp..l.l.jtk.r.l.jbh.r',
+         'l.r...r.rp..l.l.jtk.r.l.jbh.r',
          'l.jth.r.jtttk.l.....rpl.....r',
          'l...l.r.......jttbbbbbk.gbk.r',
          'l.g.l.rbbttth...............r',
@@ -97,6 +97,9 @@ function setup() {
 
     enemySquare[6].x = 25.5;
     enemySquare[6].y = 19.5;
+
+    enemySquare[7].x = 3.5;
+    enemySquare[7].y = 14.5;
 
     //top left corner- outer wall
     let pathCornerTL = new Group();
