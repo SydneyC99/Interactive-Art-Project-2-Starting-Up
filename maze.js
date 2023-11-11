@@ -3,6 +3,7 @@ let charImg, tileImg;
 let canvasHeight;
 let canvasWidth;
 let enemySquare;
+
 let maze = 
         ['ctttvtttvtttttttttttctttttttv',
          'lp..rp..r...........l.......r',
@@ -59,10 +60,23 @@ function setup() {
     });
     char.changeAni('right');
     
-    enemySquare = new Sprite ();
+    // enemySquare = new Sprite ();
+    // enemySquare.width = 1;
+    // enemySquare.height = 1;
+    // enemySquare.color = 'black';
+    
+    enemySquare = new Group();
+    enemySquare.color = 'black';
     enemySquare.width = 1;
     enemySquare.height = 1;
-    enemySquare.color = 'black';
+    enemySquare.y = 23.5;
+
+    while (enemySquare.length < 25){
+        let enemy = new enemySquare.Sprite();
+        enemy.x = enemySquare.length * 1;
+    }
+
+    enemySquare[7].color = 'red';
 
     //top left corner- outer wall
     let pathCornerTL = new Group();
@@ -197,7 +211,7 @@ function draw() {
         char.x ++;
     }
     // background(13,12,12);
-    background('blue');
+    // background('blue');
     
 }
 
