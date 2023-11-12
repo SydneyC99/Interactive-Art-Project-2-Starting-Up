@@ -6,16 +6,16 @@ let enemySquare;
 
 let maze = 
         ['ctttvtttvtttttttttttctttttttv',
-         'lp..rp..r...........l.......r',
+         'l...r...r...........l.......r',
          'mbh.jbh.r.gbbbbbbbh.l.gbbbh.r',
-         '..l...r.r.rp..............rpr',
+         '..l...r.r.r...............r.r',
          'l.jbh.r.r.rbbbbbbbbbbbh.h.rbn',
-         'l...l.r.r.r.......l...l.lprpr',
+         'l...l.r.r.r.......l...l.l.r.r',
          'mbh.l.r.r.r.gbbbh.l.g.k.jbk.r',
-         'lpl.l.r.r.r.r...l.l.r.......r',
-         'l.l.r.....r.rph.l.l.jbbbbbbbn',
-         'l.l.jbbbbbk.jtk.l.l....pl...r',
-         'l.l.............lpl.gtttk.h.r',
+         'l.l.l.r.r.r.r...l.l.r.......r',
+         'l.l.r.....r.r.h.l.l.jbbbbbbbn',
+         'l.l.jbbbbbk.jtk.l.l.....l...r',
+         'l.l.............l.l.gtttk.h.r',
          'l.jbh.gbbbbbbbbbttl.r.....r..',
          'l...........l.....l.r.gbh.jbv',
          'l.gttth.gbh.l.g.h.l.r.r.r...r',
@@ -72,7 +72,7 @@ function setup() {
     enemySquare.y = 23.5;
     enemySquare.collider = 'static';
 
-    while (enemySquare.length < 25){
+    while (enemySquare.length < 22){
         let enemy = new enemySquare.Sprite();
         enemy.x = enemySquare.length * 1;
     }
@@ -112,6 +112,36 @@ function setup() {
 
     enemySquare[11].x = 23.5;
     enemySquare[11].y = 13.5;
+
+    enemySquare[12].x = 23.5;
+    enemySquare[12].y = 9.5;
+
+    enemySquare[13].x = 17.5;
+    enemySquare[13].y = 10.5;
+
+    enemySquare[14].x = 13.5;
+    enemySquare[14].y = 8.5;
+
+    enemySquare[15].x = 1.5;
+    enemySquare[15].y = 7.5;
+
+    enemySquare[16].x = 25.5;
+    enemySquare[16].y = 5.5;
+
+    enemySquare[17].x = 27.5;
+    enemySquare[17].y = 5.5;
+
+    enemySquare[18].x = 27.5;
+    enemySquare[18].y = 3.5;
+
+    enemySquare[19].x = 11.5;
+    enemySquare[19].y = 3.5;
+
+    enemySquare[20].x = 5.5;
+    enemySquare[20].y = 1.5;
+
+    enemySquare[21].x = 1.5;
+    enemySquare[21].y = 1.5;
 
     //top left corner- outer wall
     let pathCornerTL = new Group();
