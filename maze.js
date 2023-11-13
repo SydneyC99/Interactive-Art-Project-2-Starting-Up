@@ -330,9 +330,5 @@ function overlapsEnemy() {
     return returnValue;
 }
 
-
-// function lifeCount(){
-
-//     lives--;
-//     console.log('lost a life');
-// }
+//if lives <1, swap to game over screen
+//if lives >1, && char reaches endpoint, swap to win screen
