@@ -3,6 +3,8 @@ let charImg, tileImg;
 let canvasHeight;
 let canvasWidth;
 let enemySquare;
+let lives = 3;
+let isOverlappingEnemy = false;
 
 let maze =
     ['ctttvtttvtttttttttttctttttttv',
@@ -258,14 +260,33 @@ function setup() {
 function draw() {
     clear();
 
+    background('blue');
+
+    textSize(24);
+    text ("Lives:" + lives, 15, 390);
+    textFont('Courier New');
+    textStyle(BOLD);
+    
+    
+
     if (overlapsEnemy()) {
         char.changeAni('leftPanic');
-        console.log("collided with enemy")
+        console.log("collided with enemy");
+
+        if (isOverlappingEnemy == false) {
+            lives--;
+            console.log("removing a life");
+        }
+        isOverlappingEnemy = true;
+
+    } else {
+        isOverlappingEnemy = false;
     }
 
     //Let's make this guy move!
     if (kb.pressed('left') && noWall(char.x - 1, char.y)
     ) {
+        console.log("lives" + lives);
         char.changeAni('left');
         char.x--;
     } else if (kb.pressed('up') && noWall(char.x, char.y - 1)
@@ -282,7 +303,7 @@ function draw() {
         char.x++;
     }
     // background(13,12,12);
-    background('blue');
+    
 
 }
 
@@ -310,16 +331,8 @@ function overlapsEnemy() {
 }
 
 
-// function hitEnemy() {
-//     //if blob hits the enemy, damage blob
-//     //flash the damage sprite and take away a life
-//     if (kb.pressed('left') && char.colliding(enemySquare)) {
-//         char.changeAni('leftPanic');
-//     } //else {
-//     //make elseif statements for other directions
-//     // }
-// }
-
 // function lifeCount(){
-//     //life count and display to be used in hitEnemy
+
+//     lives--;
+//     console.log('lost a life');
 // }
