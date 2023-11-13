@@ -60,7 +60,7 @@ function setup() {
     });
     char.changeAni('right');
     char.collider = 'kinematic';
-    
+    char.layer = 2;
     // enemySquare = new Sprite ();
     // enemySquare.width = 1;
     // enemySquare.height = 1;
@@ -71,7 +71,8 @@ function setup() {
     enemySquare.width = 1;
     enemySquare.height = 1;
     enemySquare.y = 23.5;
-    enemySquare.collider = 'static';
+    enemySquare.collider = 'kinematic';
+    enemySquare.layer = 1;
 
     while (enemySquare.length < 22){
         let enemy = new enemySquare.Sprite();
@@ -252,12 +253,15 @@ function setup() {
 
     new Tiles(maze, 0.5, 0.5, 1, 1);
 
-
-
 }
 
 function draw() {
     clear();
+
+    if (overlapsEnemy()) {
+        char.changeAni('leftPanic');
+        console.log("collided with enemy")
+    }
 
     //Let's make this guy move!
     if (kb.pressed('left') && noWall(char.x - 1, char.y)
@@ -296,15 +300,25 @@ function noWall(x, y) {
     }
 }
 
-function hitEnemy() {
-    //if blob hits the enemy, damage blob
-    //flash the damage sprite and take away a life
-    if (kb.pressed('left') && char.collides(enemySquare)) {
-        char.changeAni('leftPanic');
-    } //else {
-    //make elseif statements for other directions
-    // }
+function overlapsEnemy() {
+    let returnValue = false;
+    for (let i = 0; i < enemySquare.length; i++) {
+        const enemy = enemySquare[i];
+        if (enemy.x == char.x && enemy.y == char.y) returnValue = true;        
+    }
+    return returnValue;
 }
+
+
+// function hitEnemy() {
+//     //if blob hits the enemy, damage blob
+//     //flash the damage sprite and take away a life
+//     if (kb.pressed('left') && char.colliding(enemySquare)) {
+//         char.changeAni('leftPanic');
+//     } //else {
+//     //make elseif statements for other directions
+//     // }
+// }
 
 // function lifeCount(){
 //     //life count and display to be used in hitEnemy
