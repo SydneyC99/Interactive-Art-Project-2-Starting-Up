@@ -16,10 +16,10 @@ function draw() {
 
     goButton = createButton("Get Up");
     goButton.position(12, 12);
-    goButton.mousePressed(hallway);
+    goButton.mousePressed(maze);
 
 }
 
-function hallway() {
+function maze() {
     location.href = "maze.html"
 }

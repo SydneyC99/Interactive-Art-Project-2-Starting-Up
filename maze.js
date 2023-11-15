@@ -3,8 +3,10 @@ let charImg, tileImg;
 let canvasHeight;
 let canvasWidth;
 let enemySquare;
+let winSquare;
 let lives = 3;
 let isOverlappingEnemy = false;
+let isOverlappingWin = false;
 
 let maze =
     ['ctttvtttvtttttttttttctttttttv',
@@ -63,10 +65,11 @@ function setup() {
     char.changeAni('right');
     char.collider = 'kinematic';
     char.layer = 2;
-    // enemySquare = new Sprite ();
-    // enemySquare.width = 1;
-    // enemySquare.height = 1;
-    // enemySquare.color = 'black';
+    
+    winSquare = new Sprite (28.5, 11.5, 1, 1);
+    winSquare.color = 'black';
+    winSquare.stroke = 'black';
+    winSquare.collider = 'k';
     
     enemySquare = new Group();
     enemySquare.color = 'black';
@@ -267,7 +270,9 @@ function draw() {
     textFont('Courier New');
     textStyle(BOLD);
     
-    
+    if (lives <= 0) {
+        location.href = "fail.html";
+    }
 
     if (overlapsEnemy()) {
         char.changeAni('leftPanic');
@@ -281,6 +286,17 @@ function draw() {
 
     } else {
         isOverlappingEnemy = false;
+    }
+
+    if (overlapsWin()) {
+        
+        console.log("win!");
+        isOverlappingWin = true;
+        if (isOverlappingWin == true) {
+            location.href = "win.html";
+        }
+        isOverlappingWin = true;
+
     }
 
     //Let's make this guy move!
@@ -329,6 +345,17 @@ function overlapsEnemy() {
     }
     return returnValue;
 }
+
+function overlapsWin() {
+    let returnWin = false;
+    for (let i = 0; i < winSquare.length; i++) {
+        const win = winSquare[i];
+        if (win.x == char.x && win.y == char.y) returnWin = true;        
+    }
+    return returnWin;
+}
+
+
 
 //if lives <1, swap to game over screen
 //if lives >1, && char reaches endpoint, swap to win screen
