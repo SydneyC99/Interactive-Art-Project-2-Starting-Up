@@ -70,6 +70,7 @@ function setup() {
     winSquare.color = 'black';
     winSquare.stroke = 'black';
     winSquare.collider = 'k';
+    winSquare.layer = 1;
     
     enemySquare = new Group();
     enemySquare.color = 'black';
@@ -288,16 +289,16 @@ function draw() {
         isOverlappingEnemy = false;
     }
 
-    if (overlapsWin()) {
+    // if (overlapsWin()) {
         
-        console.log("win!");
-        isOverlappingWin = true;
-        if (isOverlappingWin == true) {
-            location.href = "win.html";
-        }
-        isOverlappingWin = true;
+    //     console.log("win!");
+    //     isOverlappingWin = true;
+    //     if (isOverlappingWin == true) {
+    //         location.href = "win.html";
+    //     }
+        
 
-    }
+    // }
 
     //Let's make this guy move!
     if (kb.pressed('left') && noWall(char.x - 1, char.y)
@@ -346,14 +347,14 @@ function overlapsEnemy() {
     return returnValue;
 }
 
-function overlapsWin() {
-    let returnWin = false;
-    for (let i = 0; i < winSquare.length; i++) {
-        const win = winSquare[i];
-        if (win.x == char.x && win.y == char.y) returnWin = true;        
-    }
-    return returnWin;
-}
+// function overlapsWin() {
+//     let returnWin = false;
+//     for (let i = 0; i < winSquare.length; i++) {
+//         const win = winSquare[i];
+//         if (win.x == char.x && win.y == char.y) returnWin = true;        
+//     }
+//     return returnWin;
+// }
 
 
 
