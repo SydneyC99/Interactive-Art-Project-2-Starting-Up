@@ -84,7 +84,7 @@ function setup() {
         let enemy = new enemySquare.Sprite();
         enemy.x = enemySquare.length * 1;
     }
-    enemySquare.stroke = 'pink';
+    // enemySquare.stroke = 'pink';
     enemySquare[0].x = 3.5;
     enemySquare[0].y = 19.5;
 
@@ -264,12 +264,13 @@ function setup() {
 function draw() {
     clear();
 
-    background('blue');
+    background('black');
 
     textSize(24);
     text ("Lives:" + lives, 15, 390);
     textFont('Courier New');
     textStyle(BOLD);
+    fill('white');
     
     if (lives <= 0) {
         location.href = "fail.html";
